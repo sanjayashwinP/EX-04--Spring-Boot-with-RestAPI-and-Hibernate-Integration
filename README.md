@@ -33,12 +33,14 @@ DELETE /movies/{id}
 
 ## PROGRAM CODE (Main Files):
 ### application.properties
+```
 spring.datasource.url=jdbc:h2:mem:testdb
 spring.datasource.driverClassName=org.h2.Driver
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
+```
 ### Movie.java
-
+```
 @Entity
 public class Movie {
     @Id
@@ -51,10 +53,10 @@ public class Movie {
 
     // Getters and Setters
 }
+```
 ### MovieRepository.java
-java
-Copy
-Edit
+```
+
 public interface MovieRepository extends JpaRepository<Movie, Long> {}
 ### MovieController.java
 @RestController
@@ -99,3 +101,7 @@ public class MovieController {
         }).orElse(ResponseEntity.notFound().build());
     }
 }
+```
+### Output
+<img width="1897" height="968" alt="image" src="https://github.com/user-attachments/assets/ba0cd79c-4735-4ac5-8e16-fd6f44c1ed04" />
+<img width="1498" height="751" alt="image" src="https://github.com/user-attachments/assets/8fb554c3-a920-4899-a829-f5fb268f2027" />
